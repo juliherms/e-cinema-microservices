@@ -11,6 +11,11 @@ import com.ecinema.ts.api.common.TransactionRequest;
 import com.ecinema.ts.api.common.TransactionResponse;
 import com.ecinema.ts.api.repository.TicketRepository;
 
+/**
+ * Class responsible to provide business logic for Ticket
+ * @author j.a.vasconcelos
+ *
+ */
 @Service
 public class TicketService {
 
@@ -41,7 +46,5 @@ public class TicketService {
 		message = paymentResponse.getStatus().equals("success")?"payment processing successful and ticket placed": "there is a failure in payment api, order added to cart";
 		
 		return new TransactionResponse(tr.getTicket(),paymentResponse.getAmount(),paymentResponse.getTransactionId(),message);
-		
-		
 	}
 }

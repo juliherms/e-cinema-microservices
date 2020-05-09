@@ -9,12 +9,22 @@ import org.springframework.stereotype.Service;
 import com.ecinema.ps.api.entity.Payment;
 import com.ecinema.ps.api.repository.PaymentRepository;
 
+/**
+ * Class responsible to business service for Payments
+ * @author j.a.vasconcelos
+ *
+ */
 @Service
 public class PaymentService {
 	
 	@Autowired
 	private PaymentRepository repository;
 	
+	/**
+	 * Method to execute payment
+	 * @param payment
+	 * @return
+	 */
 	public Payment doPayment(Payment payment) {
 		payment.setStatus(paymentProcessing());
 		payment.setTransactionId(UUID.randomUUID().toString());
@@ -32,7 +42,7 @@ public class PaymentService {
 	}
 	
 	/**
-	 * Responsible to return payment by informe id ticket.
+	 * Responsible to return payment by informs ticket id.
 	 * @param ticketId
 	 * @return
 	 */

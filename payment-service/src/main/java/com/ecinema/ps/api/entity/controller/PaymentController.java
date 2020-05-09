@@ -11,6 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ecinema.ps.api.entity.Payment;
 import com.ecinema.ps.api.service.PaymentService;
 
+/**
+ * responsible to provider payments endpoint
+ * @author j.a.vasconcelos
+ *
+ */
 @RestController
 @RequestMapping("payments")
 public class PaymentController {
@@ -18,17 +23,26 @@ public class PaymentController {
 	@Autowired
 	private PaymentService service;
 	
+	/**
+	 * method responsible to effect payment
+	 * @param payment
+	 * @return
+	 */
 	@PostMapping("/doPayment")
 	public Payment doPayment(@RequestBody Payment payment) {
 		
 		return service.doPayment(payment);
 	}
 	
+	/**
+	 * method responsible to return payment for ticket id
+	 * @param ticketId
+	 * @return
+	 */
 	@GetMapping("/{ticketId}")
 	public Payment findPaymentHistoryByTicketId(@PathVariable long ticketId) {
 		
 		return service.findPaymentHistoryByTicketId(ticketId);
 		
 	}
-	
 }
