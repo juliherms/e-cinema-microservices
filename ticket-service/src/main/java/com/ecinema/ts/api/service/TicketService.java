@@ -36,7 +36,7 @@ public class TicketService {
 		payment.setAmount(BigDecimal.TEN);
 		
 		//rest call
-		Payment paymentResponse = template.postForObject("http://localhost:9191/payments/doPayment",payment,Payment.class);
+		Payment paymentResponse = template.postForObject("http://payment-service/payments/doPayment",payment,Payment.class);
 		
 		message = paymentResponse.getStatus().equals("success")?"payment processing successful and ticket placed": "there is a failure in payment api, order added to cart";
 		
