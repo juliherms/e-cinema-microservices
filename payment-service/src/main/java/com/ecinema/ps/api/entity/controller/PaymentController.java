@@ -1,6 +1,8 @@
 package com.ecinema.ps.api.entity.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,6 +24,11 @@ public class PaymentController {
 		return service.doPayment(payment);
 	}
 	
-	
+	@GetMapping("/{ticketId}")
+	public Payment findPaymentHistoryByTicketId(@PathVariable long ticketId) {
+		
+		return service.findPaymentHistoryByTicketId(ticketId);
+		
+	}
 	
 }

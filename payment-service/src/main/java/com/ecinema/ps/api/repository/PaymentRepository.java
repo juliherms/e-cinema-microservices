@@ -6,4 +6,5 @@ import com.ecinema.ps.api.entity.Payment;
 
 public interface PaymentRepository extends JpaRepository<Payment, Long> {
 
+	Payment findByTicketId(long ticketId);
 }

@@ -31,7 +31,15 @@ public class PaymentService {
 		return new Random().nextBoolean()?"success":"false";
 	}
 	
+	/**
+	 * Responsible to return payment by informe id ticket.
+	 * @param ticketId
+	 * @return
+	 */
+	public Payment findPaymentHistoryByTicketId(long ticketId) {
 	
+		return repository.findByTicketId(ticketId);
+	}
 }
 
 
