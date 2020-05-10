@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.ecinema.ps.api.entity.Payment;
 import com.ecinema.ps.api.service.PaymentService;
-import com.ecinema.ts.api.common.TransactionResponse;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
