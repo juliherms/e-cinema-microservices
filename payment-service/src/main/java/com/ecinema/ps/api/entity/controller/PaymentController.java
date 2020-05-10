@@ -10,6 +10,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.ecinema.ps.api.entity.Payment;
 import com.ecinema.ps.api.service.PaymentService;
+import com.ecinema.ts.api.common.TransactionResponse;
+
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 
 /**
  * responsible to provider payments endpoint
@@ -18,6 +24,7 @@ import com.ecinema.ps.api.service.PaymentService;
  */
 @RestController
 @RequestMapping("payments")
+@Api(tags="/payments", value ="APi's responsible to payment manipulation")
 public class PaymentController {
 
 	@Autowired
@@ -28,7 +35,9 @@ public class PaymentController {
 	 * @param payment
 	 * @return
 	 */
+	@ApiOperation(value= "API responsible to create payment")
 	@PostMapping("/doPayment")
+	@ApiResponses(value = {@ApiResponse(code = 201, message = "Return for create payment", response = Payment.class)})
 	public Payment doPayment(@RequestBody Payment payment) {
 		
 		return service.doPayment(payment);
@@ -40,6 +49,7 @@ public class PaymentController {
 	 * @return
 	 */
 	@GetMapping("/{ticketId}")
+	@ApiOperation(value= "API responsible to get payment by ticket id")
 	public Payment findPaymentHistoryByTicketId(@PathVariable long ticketId) {
 		
 		return service.findPaymentHistoryByTicketId(ticketId);
