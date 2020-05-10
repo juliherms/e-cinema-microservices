@@ -4,6 +4,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
 /**
  * Payment microservice responsible to provide payment tickets
  * Connect to Eureka Server - Service Discovery
@@ -12,6 +14,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
  */
 @SpringBootApplication
 @EnableEurekaClient
+@EnableSwagger2
 public class PaymentServiceApplication {
 
 	public static void main(String[] args) {
