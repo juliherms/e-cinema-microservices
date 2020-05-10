@@ -17,7 +17,7 @@ public class FallbackController {
 	 * Method responsible to catch errors from ticket microservices
 	 * @return
 	 */
-	@RequestMapping("/ticketFallback")
+	@RequestMapping("/ticketFallBack")
 	public Mono<String> ticketServiceFallBack(){
 		return Mono.just("Ticket Service is taking to loong to respond or is down. Please can try again");
 	}
