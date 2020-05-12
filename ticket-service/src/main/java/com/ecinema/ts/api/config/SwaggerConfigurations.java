@@ -1,7 +1,6 @@
 package com.ecinema.ts.api.config;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 import org.springframework.context.annotation.Configuration;
 
@@ -9,7 +8,6 @@ import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.Contact;
-import springfox.documentation.service.VendorExtension;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 
