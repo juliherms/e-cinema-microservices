@@ -3,6 +3,8 @@ package com.ecinema.ps.api.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.ecinema.ps.api.entity.Product;
@@ -28,6 +30,15 @@ public class ProductService {
 	public List<Product> findAll() {
 
 		return repo.findAll();
+	}
+	
+	/**
+	 * method responsible to list all products pageable
+	 * @param pageable
+	 * @return
+	 */
+	public Page<Product> findAll(Pageable pageable){
+		return repo.findAll(pageable);
 	}
 
 	/**
