@@ -26,3 +26,12 @@ Example of an application in Spring Boot and Netflix OSS using fundamentals of b
 
 
 
+
+## Hystrix
+
+<img src="img/hystrixdashboad.png">
+
+
+## Eureka
+
+<img src="img/eureka.png">

@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ecinema.ts.api.common.TransactionRequest;
 import com.ecinema.ts.api.common.TransactionResponse;
 import com.ecinema.ts.api.service.TicketService;
+import com.fasterxml.jackson.core.JsonProcessingException;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -32,11 +33,12 @@ public class TicketController {
 	 * Responsible to book ticket in the system
 	 * @param ticket
 	 * @return
+	 * @throws JsonProcessingException 
 	 */
 	@ApiOperation(value= "API responsible to create a booked ticket")
 	@PostMapping("/bookTicket")
 	@ApiResponses(value = {@ApiResponse(code = 201, message = "Return for create ticket", response = TransactionResponse.class)})
-	public TransactionResponse bookTicket(@RequestBody TransactionRequest tr) {
+	public TransactionResponse bookTicket(@RequestBody TransactionRequest tr) throws JsonProcessingException {
 		
 		return service.save(tr);
 	}
