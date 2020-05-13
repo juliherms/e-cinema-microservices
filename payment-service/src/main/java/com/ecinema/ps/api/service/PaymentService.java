@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ecinema.ps.api.entity.Payment;
+import com.ecinema.ps.api.exception.ResourceNotFoundException;
 import com.ecinema.ps.api.repository.PaymentRepository;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -61,6 +62,23 @@ public class PaymentService {
 	
 		Payment payment = repository.findByTicketId(ticketId);
 		log.info("Payment findPaymentHistoryByTicketId : {}", new ObjectMapper().writeValueAsString(payment));
+		
+		return payment;
+	}
+	
+	/**
+	 * Responsible to cancel payment. 
+	 * @param id
+	 * @return
+	 * @throws JsonProcessingException 
+	 */
+	public Payment cancel(Long id) throws JsonProcessingException {
+		
+		Payment payment = repository.findById(id).orElseThrow(() -> new ResourceNotFoundException());
+		payment.setStatus("canceled");
+		repository.save(payment);
+		
+		log.info("Payment cancel : {}", new ObjectMapper().writeValueAsString(payment));
 		
 		return payment;
 	}
