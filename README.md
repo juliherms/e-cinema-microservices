@@ -10,6 +10,11 @@ Example of an application in Spring Boot and Netflix OSS using fundamentals of b
 
 ## Microservices Architecture
 
+### Requeriments
+
+- The project follows [**CloudNative**](https://www.cncf.io/) recommendations and The [**twelve-factor app**](https://12factor.net/) methodology for building *software-as-a-service apps*.
+
+
 ### Challenges in microservices architecture
 
 - Configuration Management
