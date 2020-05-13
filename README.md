@@ -46,10 +46,11 @@ Example of an application in Spring Boot and Netflix OSS using fundamentals of b
 |---------------------------------|------------|
 | Service Discovery               | [Eureka server](eureka-server) |
 | API Gateway                     | [Zuul reverse proxy](zuul-gateway/src/main/java/com/donateplus/zuul/ZuulGatewayApplication.java) and [Routing configuration](donateplusapi/src/main/resources/application.properties) |
-| Authorization-Service           | Responsible to allow access to microservices  |
-| Ticket-Service                  | Responsible to provide access to ticket  |
-| Payment-Service                 | Responsible to process payments from ticket or products  |
-| Product-Service                 | Responsible to provide products  |
+| Authorization-Service           | Port:8085 Responsible to allow access to microservices  |
+| Ticket-Service                  | Port:9192 Responsible to provide access to ticket  |
+| Payment-Service                 | Port:9191 Responsible to process payments from ticket or products  |
+| Product-Service                 | Port:XXXX Responsible to provide products  |
+| Config-Server                   | Port:9196 Responsible to provide informantion and parametres for common application properties  |
 
 
 
