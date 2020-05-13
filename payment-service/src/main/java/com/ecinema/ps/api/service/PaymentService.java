@@ -3,11 +3,15 @@ package com.ecinema.ps.api.service;
 import java.util.Random;
 import java.util.UUID;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ecinema.ps.api.entity.Payment;
 import com.ecinema.ps.api.repository.PaymentRepository;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
  * Class responsible to business service for Payments
@@ -20,14 +24,20 @@ public class PaymentService {
 	@Autowired
 	private PaymentRepository repository;
 	
+	private Logger log = LoggerFactory.getLogger(PaymentService.class);
+	
 	/**
 	 * Method to execute payment
 	 * @param payment
 	 * @return
+	 * @throws JsonProcessingException 
 	 */
-	public Payment doPayment(Payment payment) {
+	public Payment doPayment(Payment payment) throws JsonProcessingException {
 		payment.setStatus(paymentProcessing());
 		payment.setTransactionId(UUID.randomUUID().toString());
+		
+		log.info("Payment doPayment request : {}", new ObjectMapper().writeValueAsString(payment));
+		
 		return repository.save(payment);
 	}
 	
@@ -37,7 +47,7 @@ public class PaymentService {
 	 * @return
 	 */
 	public String paymentProcessing() {
-		//api should be 3rd pary payment gateway(paypal,paytm...)
+		//api should be 3rd party payment gateway(paypal,paytm...)
 		return new Random().nextBoolean()?"success":"false";
 	}
 	
@@ -45,10 +55,14 @@ public class PaymentService {
 	 * Responsible to return payment by informs ticket id.
 	 * @param ticketId
 	 * @return
+	 * @throws JsonProcessingException 
 	 */
-	public Payment findPaymentHistoryByTicketId(long ticketId) {
+	public Payment findPaymentHistoryByTicketId(long ticketId) throws JsonProcessingException {
 	
-		return repository.findByTicketId(ticketId);
+		Payment payment = repository.findByTicketId(ticketId);
+		log.info("Payment findPaymentHistoryByTicketId : {}", new ObjectMapper().writeValueAsString(payment));
+		
+		return payment;
 	}
 }
 
