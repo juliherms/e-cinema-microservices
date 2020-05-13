@@ -40,7 +40,7 @@ Example of an application in Spring Boot and Netflix OSS using fundamentals of b
 
 ## Solution
 
-### Microserices
+### Microservices
 
 | Microservices                   | Description  |
 |---------------------------------|------------|
