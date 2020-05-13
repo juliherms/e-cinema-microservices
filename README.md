@@ -1,19 +1,25 @@
 
-# Aplicação E-Cinema
+# E-Cinema Application
 
-Exemplo de uma aplicação em Spring Boot e Netflix OSS utilizando fundamentos das boas práticas de arquitetura de microserviços.
+Example of an application in Spring Boot and Netflix OSS using fundamentals of good microservice architecture practices.
 
-## Construído com:
+## Built with:
 
-- [Spring Boot](https://spring.io/projects/spring-boot) - Responsável por criar o microserviço e realizar o seu processamento e persistência.
-- [Maven](https://maven.apache.org/) - Ferramenta de build automático.sponsável por se conectar com o eureka e expor via gateway os microserviços registrados.
+- [Spring Boot](https://spring.io/projects/spring-boot)
+- [Maven](https://maven.apache.org/)
 
-## Arquitetura
+## Architecture
 
-### Desafios
+### Challenges in microservices architecture
+
+- Configuration Management
+- Dynamic Scalling Up and Down
+- Load Distribution
+- Visibility and Monitoring
+- Common Feature Implementation
+- Fault Tolerance
 
 
-<img src="img/archtecture1.png">
 
 ## Microserviços
 
