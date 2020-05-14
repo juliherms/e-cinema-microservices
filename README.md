@@ -50,7 +50,7 @@ Example of an application in Spring Boot and Netflix OSS using fundamentals of b
 | Ticket-Service                  | Port:9192 Responsible to provide access to ticket  |
 | Payment-Service                 | Port:9191 Responsible to process payments from ticket or products  |
 | Product-Service                 | Port:9193 Responsible to provide products  |
-| Config-Server                   | Port:9196 Responsible to provide informantion and parametres for common application properties  |
+| Config-Server                   | Port:9196 Responsible to provide information and parameters for common application properties  |
 
 
 ### Docker Containers
