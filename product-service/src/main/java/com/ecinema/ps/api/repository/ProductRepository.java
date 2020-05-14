@@ -9,6 +9,7 @@ import com.ecinema.ps.api.entity.Product;
  * @author j.a.vasconcelos
  *
  */
+
 public interface ProductRepository extends JpaRepository<Product, Long> {
 
 }

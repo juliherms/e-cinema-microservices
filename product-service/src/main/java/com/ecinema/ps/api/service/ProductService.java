@@ -3,6 +3,8 @@ package com.ecinema.ps.api.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -37,6 +39,7 @@ public class ProductService {
 	 * @param pageable
 	 * @return
 	 */
+	@Cacheable(cacheNames = Product.CACHE_NAME, key="#root.method.name")
 	public Page<Product> findAll(Pageable pageable){
 		return repo.findAll(pageable);
 	}
@@ -52,4 +55,14 @@ public class ProductService {
 
 		return product;
 	}
+
+	/**
+	 * method responsible to create products
+	 * @param p
+	 * @return
+	 */
+	@CacheEvict(cacheNames = Product.CACHE_NAME, allEntries = true)
+    public Product create(Product p) {
+        return repo.save(p);
+    }
 }
