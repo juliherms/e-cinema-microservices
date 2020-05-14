@@ -63,6 +63,12 @@ docker run -it --name redis -p 6379:6379  redis:5.0.3
 docker run -- name db_postgres -e POSTGRES_PASSWORD=your_password -p 5432:5432 -d postgres 
 ```
 
+### Cache
+
+Cache is one of the approaches to optimize access to systems data, where we avoid repetitive requests in the original data sources,
+which are usually large structures, complex and not always performance, so with cache, we start to consult more optimized locations,
+which provide quick access through keys.
+
 ## Hystrix
 
 <img src="img/hystrixdashboad.png">
