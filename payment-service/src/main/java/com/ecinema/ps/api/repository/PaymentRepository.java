@@ -1,6 +1,6 @@
 package com.ecinema.ps.api.repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
 import com.ecinema.ps.api.entity.Payment;
 
@@ -9,12 +9,12 @@ import com.ecinema.ps.api.entity.Payment;
  * @author j.a.vasconcelos
  *
  */
-public interface PaymentRepository extends JpaRepository<Payment, Long> {
+public interface PaymentRepository extends MongoRepository<Payment, String> {
 
 	/**
 	 * Return payment by ticket id.
 	 * @param ticketId
 	 * @return
 	 */
-	Payment findByTicketId(long ticketId);
+	Payment findByTicketId(String ticketId);
 }

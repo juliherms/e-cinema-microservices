@@ -54,7 +54,7 @@ public class PaymentController {
 	 */
 	@GetMapping("/{ticketId}")
 	@ApiOperation(value= "API responsible to get payment by ticket id")
-	public PaymentDto findPaymentHistoryByTicketId(@PathVariable long ticketId) throws JsonProcessingException {
+	public PaymentDto findPaymentHistoryByTicketId(@PathVariable String ticketId) throws JsonProcessingException {
 		
 		return new PaymentDto(service.findPaymentHistoryByTicketId(ticketId));
 	}
@@ -67,7 +67,7 @@ public class PaymentController {
 	 */
 	@DeleteMapping("/{id}")
 	@ApiOperation(value="API resonsible to cancel payment")
-	public PaymentDto cancel(@PathVariable("id") Long id) throws JsonProcessingException {
+	public PaymentDto cancel(@PathVariable("id") String id) throws JsonProcessingException {
 		
 		return new PaymentDto(service.cancel(id));
 	}

@@ -34,6 +34,7 @@ public class PaymentService {
 	 * @throws JsonProcessingException 
 	 */
 	public Payment doPayment(Payment payment) throws JsonProcessingException {
+		payment.setId(UUID.randomUUID().toString());
 		payment.setStatus(paymentProcessing());
 		payment.setTransactionId(UUID.randomUUID().toString());
 		
@@ -58,7 +59,7 @@ public class PaymentService {
 	 * @return
 	 * @throws JsonProcessingException 
 	 */
-	public Payment findPaymentHistoryByTicketId(long ticketId) throws JsonProcessingException {
+	public Payment findPaymentHistoryByTicketId(String ticketId) throws JsonProcessingException {
 	
 		Payment payment = repository.findByTicketId(ticketId);
 		log.info("Payment findPaymentHistoryByTicketId : {}", new ObjectMapper().writeValueAsString(payment));
@@ -72,7 +73,7 @@ public class PaymentService {
 	 * @return
 	 * @throws JsonProcessingException 
 	 */
-	public Payment cancel(Long id) throws JsonProcessingException {
+	public Payment cancel(String id) throws JsonProcessingException {
 		
 		Payment payment = repository.findById(id).orElseThrow(() -> new ResourceNotFoundException());
 		payment.setStatus("canceled");
