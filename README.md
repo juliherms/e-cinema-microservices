@@ -87,6 +87,10 @@ which provide quick access through keys.
 | Kibana                          | Kibana is a visualization UI Layer  |
 
 
+Capture logs from Logstash
+
 <img src="img/kibana.png">
+
+Custom Dashboard with Kibana
 
 <img src="img/kibana2.png">
