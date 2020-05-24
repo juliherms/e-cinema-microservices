@@ -59,7 +59,7 @@ Example of an application in Spring Boot and Netflix OSS using fundamentals of b
 
 #container responsible to storage cache
 docker run -it --name redis -p 6379:6379  redis:5.0.3
-#container responsible to persist system data
+#container responsible to persist tikcet data
 docker run -- name db_postgres -e POSTGRES_PASSWORD=your_password -p 5432:5432 -d postgres 
 ```
 
@@ -77,3 +77,10 @@ which provide quick access through keys.
 ## Eureka
 
 <img src="img/eureka.png">
+
+
+## ELK Stack: Elasticsearch, Logstash, Kibana 
+
+<img src="img/kibana.png">
+
+<img src="img/kibana2.png">
