@@ -45,7 +45,6 @@ Example of an application in Spring Boot and Netflix OSS using fundamentals of b
 | Microservices                   | Description  |
 |---------------------------------|------------|
 | Service Discovery               | [Eureka server](eureka-server) |
-| API Gateway                     | [Zuul reverse proxy](zuul-gateway/src/main/java/com/donateplus/zuul/ZuulGatewayApplication.java) and [Routing configuration](donateplusapi/src/main/resources/application.properties) |
 | Authorization-Service           | Port:8085 Responsible to allow access to microservices  |
 | Ticket-Service                  | Port:9192 Responsible to provide access to ticket  |
 | Payment-Service                 | Port:9191 Responsible to process payments from ticket or products  |
@@ -80,6 +79,13 @@ which provide quick access through keys.
 
 
 ## ELK Stack: Elasticsearch, Logstash, Kibana 
+
+| Stack                           | Description  |
+|---------------------------------|------------|
+| Elasticsearch                   | NoSQL database based on the Lucene search engine |
+| Logstash                        | Log pipeline tool that accepts inputs/logs from various sources  |
+| Kibana                          | Kibana is a visualization UI Layer  |
+
 
 <img src="img/kibana.png">
 
