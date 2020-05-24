@@ -73,6 +73,12 @@ which provide quick access through keys.
 [Configuration](product-service/src/main/resources/application.properties) 
 [Using](product-service/src/main/java/com/ecinema/ps/api/service/ProductService.java)  with @CacheEvict and @Cacheable annotations
 
+## Hystrix
+
+The Hystrix Dashboard allows you to monitor Hystrix metrics in real time.
+
+<img src="img/hystrixdashboad.png">
+
 
 
 ## ELK Stack: Elasticsearch, Logstash, Kibana 
