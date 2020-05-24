@@ -68,14 +68,6 @@ Cache is one of the approaches to optimize access to systems data, where we avoi
 which are usually large structures, complex and not always performance, so with cache, we start to consult more optimized locations,
 which provide quick access through keys.
 
-## Hystrix
-
-<img src="img/hystrixdashboad.png">
-
-
-## Eureka
-
-<img src="img/eureka.png">
 
 
 ## ELK Stack: Elasticsearch, Logstash, Kibana 
